@@ -6,23 +6,43 @@
     <meta name="description" content="TLO Visual - Alquiler de pantallas LED y soluciones audiovisuales profesionales. Más de 15 años de experiencia en eventos, conciertos, ferias y espectáculos.">
     <meta name="keywords" content="pantallas LED, alquiler pantallas, audiovisual, eventos, conciertos, iluminación, sonido profesional">
     <title>TLO Visual - Alquiler de Pantallas LED y Soluciones Audiovisuales</title>
-    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
-    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    <style>
+        /* Logo image en navbar */
+        .logo-img {
+            height: 48px;
+            width: auto;
+            display: block;
+        }
+        .navbar a.logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        /* Footer logo */
+        .footer-logo-img {
+            height: 40px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            margin-bottom: 1rem;
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
     <!-- NAVIGATION -->
     <nav class="navbar" id="navbar">
-        <a href="index.html" class="logo">TLO<span>Visual</span></a>
+        <a href="index.html" class="logo-link">
+            <img src="images/logo_tlo_white.png" alt="TLO Visual" class="logo-img">
+        </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#pantallas">Pantallas LED</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
@@ -41,39 +61,39 @@
     <section class="hero-gallery">
         <div class="gallery-slider" id="gallerySlider">
             <div class="gallery-slide active">
-                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1600" alt="Concierto con pantalla LED">
+                <img src="images/grandeseventos.jpg" alt="Grandes Eventos con pantalla LED">
                 <div class="slide-overlay">
                     <div class="slide-info">
-                        <span class="slide-category">CONCIERTOS</span>
+                        <span class="slide-category">GRANDES EVENTOS</span>
                         <h2>Pantallas LED para grandes eventos</h2>
-                        <p>Montaje de pantallas modulares para concierto de 15,000 personas</p>
+                        <p>Montaje de pantallas modulares de alta resolución para eventos de primer nivel</p>
                     </div>
                 </div>
             </div>
             <div class="gallery-slide">
-                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1600" alt="Evento corporativo">
+                <img src="images/corporativo.jpg" alt="Evento corporativo con pantalla LED">
                 <div class="slide-overlay">
                     <div class="slide-info">
                         <span class="slide-category">CORPORATIVO</span>
-                        <h2>Lanzamientos de producto</h2>
-                        <p>Tecnología audiovisual de impacto para presentaciones empresariales</p>
+                        <h2>Eventos corporativos y lanzamientos</h2>
+                        <p>Tecnología audiovisual de impacto para presentaciones y lanzamientos de producto</p>
                     </div>
                 </div>
             </div>
             <div class="gallery-slide">
-                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600" alt="Feria">
+                <img src="images/ferias_exposiciones.jpg" alt="Ferias y exposiciones con pantalla LED">
                 <div class="slide-overlay">
                     <div class="slide-info">
-                        <span class="slide-category">FERIAS & EXPOSICIONES</span>
-                        <h2>Stands interactivos</h2>
-                        <p>Pantallas LED que hacen destacar tu marca en ferias internacionales</p>
+                        <span class="slide-category">FERIAS &amp; EXPOSICIONES</span>
+                        <h2>Stands interactivos en ferias internacionales</h2>
+                        <p>Pantallas LED que hacen destacar tu marca en ferias y exposiciones de todo el mundo</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="gallery-nav">
-            <button onclick="prevSlide()" aria-label="Anterior">‹</button>
-            <button onclick="nextSlide()" aria-label="Siguiente">›</button>
+            <button onclick="prevSlide()" aria-label="Anterior">&#8249;</button>
+            <button onclick="nextSlide()" aria-label="Siguiente">&#8250;</button>
         </div>
         <div class="gallery-indicators" id="galleryIndicators"></div>
     </section>
@@ -120,7 +140,6 @@
                     </ul>
                 </div>
             </div>
-
             <!-- Pantalla 2 -->
             <div class="pantalla-card">
                 <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800" alt="Pantalla LED Outdoor" class="pantalla-image">
@@ -136,7 +155,6 @@
                     </ul>
                 </div>
             </div>
-
             <!-- Pantalla 3 -->
             <div class="pantalla-card">
                 <img src="https://images.unsplash.com/photo-1511578194003-00c80e42dc9b?w=800" alt="Pantalla LED Modular" class="pantalla-image">
@@ -183,36 +201,30 @@
             <button class="filter-btn" data-filter="espectaculos">Espectáculos</button>
         </div>
         <div class="proyectos-gallery" id="proyectosGallery">
-            <!-- Proyecto 1 -->
-            <div class="proyecto-item" data-category="conciertos">
-                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800" alt="Festival de música">
-                <div class="proyecto-overlay">
-                    <span class="proyecto-tag">CONCIERTO</span>
-                    <h3>Festival de Música 2024</h3>
-                    <p>Pantalla LED 20x10 metros • Iluminación escénica completa</p>
-                </div>
-            </div>
-
-            <!-- Proyecto 2 -->
             <div class="proyecto-item" data-category="corporativos">
-                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800" alt="Evento corporativo">
+                <img src="images/corporativo.jpg" alt="Evento corporativo Innovation Day">
                 <div class="proyecto-overlay">
                     <span class="proyecto-tag">CORPORATIVO</span>
-                    <h3>Lanzamiento de Producto</h3>
-                    <p>Setup audiovisual completo • Mapping 3D en pantallas</p>
+                    <h3>Innovation Day - Electricity 4.0</h3>
+                    <p>Pantalla LED de gran formato • Evento corporativo en Madrid 2023</p>
                 </div>
             </div>
-
-            <!-- Proyecto 3 -->
             <div class="proyecto-item" data-category="ferias">
-                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800" alt="Feria internacional">
+                <img src="images/ferias_exposiciones.jpg" alt="Feria internacional con stand LED">
                 <div class="proyecto-overlay">
                     <span class="proyecto-tag">FERIA</span>
                     <h3>Expo Internacional</h3>
-                    <p>Stand con pantallas LED interactivas • Sistema de sonido</p>
+                    <p>Stands con pantallas LED en columnas • Feria de turismo internacional</p>
                 </div>
             </div>
-
+            <div class="proyecto-item" data-category="conciertos">
+                <img src="images/grandeseventos.jpg" alt="Gran evento con pantalla LED">
+                <div class="proyecto-overlay">
+                    <span class="proyecto-tag">GRAN EVENTO</span>
+                    <h3>Grandes Eventos</h3>
+                    <p>Pantallas LED de alta resolución para eventos multitudinarios</p>
+                </div>
+            </div>
             <!-- Proyecto 4 -->
             <div class="proyecto-item" data-category="conciertos">
                 <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800" alt="Concierto 2">
@@ -222,7 +234,6 @@
                     <p>30+ shows • Sistema LED completo • Trucaje</p>
                 </div>
             </div>
-
             <!-- Proyecto 5 -->
             <div class="proyecto-item" data-category="corporativos">
                 <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800" alt="Convención">
@@ -232,7 +243,6 @@
                     <p>500 asistentes • Streaming HD • Multipantalla</p>
                 </div>
             </div>
-
             <!-- Proyecto 6 -->
             <div class="proyecto-item" data-category="espectaculos">
                 <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800" alt="Espectáculo">
@@ -242,7 +252,6 @@
                     <p>Mapping sincronizado • Efectos visuales • LED backdrop</p>
                 </div>
             </div>
-
             <!-- Proyecto 7 -->
             <div class="proyecto-item" data-category="conciertos">
                 <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800" alt="Concierto 3">
@@ -252,7 +261,6 @@
                     <p>Pantalla principal + laterales • Iluminación robótica</p>
                 </div>
             </div>
-
             <!-- Proyecto 8 -->
             <div class="proyecto-item" data-category="ferias">
                 <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800" alt="Feria 2">
@@ -262,7 +270,6 @@
                     <p>Pantallas informativas • Sistema de audio ambiental</p>
                 </div>
             </div>
-
             <!-- Proyecto 9 -->
             <div class="proyecto-item" data-category="corporativos">
                 <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800" alt="Corporativo 3">
@@ -342,7 +349,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3 class="logo">TLO<span style="color: var(--primary-orange);">Visual</span></h3>
+                <img src="images/logo_tlo_white.png" alt="TLO Visual" class="footer-logo-img">
                 <p>Alquiler de pantallas LED y soluciones audiovisuales profesionales. Más de 15 años de experiencia en eventos.</p>
             </div>
             <div class="footer-section">
@@ -369,7 +376,7 @@
                     <li>📧 tlo@tlovisual.com</li>
                     <li>📞 686 514 064</li>
                     <li>📱 618 831 500</li>
-                    <li>📍 Córdoba, Argentina</li>
+                    <li>📍 España</li>
                 </ul>
             </div>
         </div>
