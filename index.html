@@ -33,6 +33,60 @@
             margin-bottom: 1rem;
             display: block;
         }
+        /* Pantallas filters */
+        .pantallas-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        .pantalla-filter-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: var(--white);
+            padding: 0.6rem 1.4rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+        }
+        .pantalla-filter-btn:hover,
+        .pantalla-filter-btn.active {
+            background: var(--primary-orange);
+            border-color: var(--primary-orange);
+        }
+        /* Badge variants */
+        .outdoor-badge {
+            background: #1565C0 !important;
+        }
+        .transparente-badge {
+            background: #2E7D32 !important;
+        }
+        .indoor-badge-dicolor {
+            background: #6A1B9A !important;
+        }
+        /* Datasheet button */
+        .datasheet-btn {
+            display: inline-block;
+            margin-top: 1.2rem;
+            padding: 0.5rem 1.2rem;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 6px;
+            color: var(--light-gray);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+        .datasheet-btn:hover {
+            border-color: var(--primary-orange);
+            color: var(--primary-orange);
+        }
+        /* Hidden card */
+        .pantalla-card.hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -121,54 +175,114 @@
     <section class="pantallas-led" id="pantallas">
         <div class="section-header">
             <h2>Nuestras Pantallas LED</h2>
-            <p>Tecnología de última generación para cualquier tipo de evento</p>
+            <p>Catálogo de gabinetes para alquiler — temporada 2024/2025</p>
         </div>
-        <div class="pantallas-grid">
-            <!-- Pantalla 1 -->
-            <div class="pantalla-card">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800" alt="Pantalla LED Indoor" class="pantalla-image">
+
+        <!-- Filtros indoor/outdoor -->
+        <div class="pantallas-filters">
+            <button class="pantalla-filter-btn active" data-pfilter="all">Todos</button>
+            <button class="pantalla-filter-btn" data-pfilter="indoor">Indoor</button>
+            <button class="pantalla-filter-btn" data-pfilter="outdoor">Outdoor</button>
+            <button class="pantalla-filter-btn" data-pfilter="transparente">Transparente</button>
+        </div>
+
+        <div class="pantallas-grid" id="pantallasGrid">
+
+            <!-- 1. P1.9 GWR -->
+            <div class="pantalla-card" data-ptype="indoor">
+                <img src="https://lh3.googleusercontent.com/d/1m825O2_cUdGROWjtmhFSdPGrEkZB0V8e" alt="Pantalla LED Indoor P1.9 GWR" class="pantalla-image">
                 <div class="pantalla-info">
                     <span class="pantalla-badge">INDOOR</span>
-                    <h3>Pantallas LED P3 Indoor</h3>
-                    <p>Ideales para eventos corporativos, conferencias y ferias en interiores.</p>
+                    <h3>P1.9 GWR — Alta Resolución</h3>
+                    <p>Máxima nitidez para visualización cercana. Ideal para studios, showrooms y eventos VIP. LED Nichia con tecnología GWR.</p>
                     <ul class="pantalla-specs">
-                        <li><span class="spec-label">Pitch:</span> <span>3mm</span></li>
-                        <li><span class="spec-label">Resolución:</span> <span>Full HD</span></li>
-                        <li><span class="spec-label">Brillo:</span> <span>1000 nits</span></li>
-                        <li><span class="spec-label">Tamaño módulo:</span> <span>500x500mm</span></li>
+                        <li><span class="spec-label">Pitch:</span> <span>1.95 mm</span></li>
+                        <li><span class="spec-label">Gabinete:</span> <span>500×500×80 mm</span></li>
+                        <li><span class="spec-label">Brillo:</span> <span>1.100 nits</span></li>
+                        <li><span class="spec-label">Refresh Rate:</span> <span>&gt;4.800 Hz</span></li>
+                        <li><span class="spec-label">Peso:</span> <span>7,7 kg/gabinete</span></li>
+                        <li><span class="spec-label">IP:</span> <span>IP40 frontal / IP21 trasero</span></li>
                     </ul>
+                    <a href="https://drive.google.com/file/d/1Hk4XWFLz9eo56kBG-P4cFVfvX36qhdwA/view" target="_blank" class="datasheet-btn">📄 Ver Data Sheet</a>
                 </div>
             </div>
-            <!-- Pantalla 2 -->
-            <div class="pantalla-card">
-                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800" alt="Pantalla LED Outdoor" class="pantalla-image">
+
+            <!-- 2. P2.6 TLO Indoor -->
+            <div class="pantalla-card" data-ptype="indoor">
+                <img src="https://lh3.googleusercontent.com/d/19VEz2tYVpLaefPo6yIJ19IOf6-BZ9b1p" alt="Pantalla LED Indoor P2.6 TLO" class="pantalla-image">
                 <div class="pantalla-info">
-                    <span class="pantalla-badge">OUTDOOR</span>
-                    <h3>Pantallas LED P4.8 Outdoor</h3>
-                    <p>Perfectas para conciertos, festivales y eventos al aire libre.</p>
+                    <span class="pantalla-badge">INDOOR</span>
+                    <h3>P2.6 TLO — Interior Versátil</h3>
+                    <p>Equilibrio perfecto entre resolución y cobertura. Hasta 800 gabinetes del mismo batch. LED Nationstar con tecnología GWR, curvable.</p>
                     <ul class="pantalla-specs">
-                        <li><span class="spec-label">Pitch:</span> <span>4.8mm</span></li>
-                        <li><span class="spec-label">Resolución:</span> <span>HD+</span></li>
-                        <li><span class="spec-label">Brillo:</span> <span>5000 nits</span></li>
-                        <li><span class="spec-label">Resistencia:</span> <span>IP65</span></li>
+                        <li><span class="spec-label">Pitch:</span> <span>2.60 mm</span></li>
+                        <li><span class="spec-label">Gabinete:</span> <span>500×500×80 mm</span></li>
+                        <li><span class="spec-label">Brillo:</span> <span>1.100 nits</span></li>
+                        <li><span class="spec-label">Refresh Rate:</span> <span>&gt;4.800 Hz</span></li>
+                        <li><span class="spec-label">Peso:</span> <span>5,9–6,2 kg/gab.</span></li>
+                        <li><span class="spec-label">Curvable:</span> <span>±10°</span></li>
                     </ul>
+                    <a href="https://drive.google.com/file/d/1gLdFTjBtshyb1EyhQIeDFwrnr5A5-ZCC/view" target="_blank" class="datasheet-btn">📄 Ver Data Sheet</a>
                 </div>
             </div>
-            <!-- Pantalla 3 -->
-            <div class="pantalla-card">
-                <img src="https://images.unsplash.com/photo-1511578194003-00c80e42dc9b?w=800" alt="Pantalla LED Modular" class="pantalla-image">
+
+            <!-- 3. Dicolor AF2 / A Series -->
+            <div class="pantalla-card" data-ptype="indoor">
+                <img src="https://lh3.googleusercontent.com/d/1I6nOk2Gpk1hUHrpuTc718xvdJASM8VAE" alt="Pantalla LED Indoor Dicolor AF Series" class="pantalla-image">
                 <div class="pantalla-info">
-                    <span class="pantalla-badge">MODULAR</span>
-                    <h3>Pantallas Modulares Flexibles</h3>
-                    <p>Configuraciones personalizadas según las necesidades del evento.</p>
+                    <span class="pantalla-badge indoor-badge-dicolor">INDOOR — DICOLOR</span>
+                    <h3>Dicolor AF / AF2 Series</h3>
+                    <p>Modular intercambiable entre modelos rectos y curvos. Mantenimiento frontal y trasero por una sola persona. Disponible en P1.25 a P3.9.</p>
                     <ul class="pantalla-specs">
-                        <li><span class="spec-label">Pitch:</span> <span>3.9mm</span></li>
-                        <li><span class="spec-label">Formas:</span> <span>Curvas/Rectas</span></li>
-                        <li><span class="spec-label">Peso:</span> <span>Ligero</span></li>
-                        <li><span class="spec-label">Montaje:</span> <span>Rápido</span></li>
+                        <li><span class="spec-label">Pitch:</span> <span>1.25 — 3.9 mm</span></li>
+                        <li><span class="spec-label">Gabinete:</span> <span>500×500×80 mm</span></li>
+                        <li><span class="spec-label">Brillo:</span> <span>800–1.000 nits</span></li>
+                        <li><span class="spec-label">Refresh Rate:</span> <span>≥3.840 Hz</span></li>
+                        <li><span class="spec-label">Peso:</span> <span>7,6–10 kg/gab.</span></li>
+                        <li><span class="spec-label">IP:</span> <span>IP40 / IP21</span></li>
                     </ul>
+                    <a href="https://drive.google.com/file/d/1VLVCx-9wpdYVKT8gWvlxjfDC_KdL1PvT/view" target="_blank" class="datasheet-btn">📄 Ver Data Sheet</a>
                 </div>
             </div>
+
+            <!-- 4. Dicolor UC Series Outdoor -->
+            <div class="pantalla-card" data-ptype="outdoor">
+                <img src="https://lh3.googleusercontent.com/d/1bVmEmrhbzxSoqbG7it16OorBc0GF3Y6R" alt="Pantalla LED Outdoor Dicolor UC Series" class="pantalla-image">
+                <div class="pantalla-info">
+                    <span class="pantalla-badge outdoor-badge">OUTDOOR — DICOLOR UC</span>
+                    <h3>Dicolor UC Series — Outdoor</h3>
+                    <p>Ultra ligera (11,5 kg en 500×1000 mm) y delgada (72 mm). Múltiples formas: recta, curva y 90°. Touring system incluido. P2.3 a P8.9.</p>
+                    <ul class="pantalla-specs">
+                        <li><span class="spec-label">Pitch:</span> <span>2.38 — 8.9 mm</span></li>
+                        <li><span class="spec-label">Gabinete:</span> <span>500×500 / 500×1000 mm</span></li>
+                        <li><span class="spec-label">Brillo:</span> <span>800–4.500 nits</span></li>
+                        <li><span class="spec-label">Refresh Rate:</span> <span>≥3.840 Hz</span></li>
+                        <li><span class="spec-label">Peso:</span> <span>7–11,5 kg/gab.</span></li>
+                        <li><span class="spec-label">IP:</span> <span>IP65 / IP54</span></li>
+                    </ul>
+                    <a href="https://drive.google.com/file/d/1eHAxyi0cV6tArbP869p9Ka9wPENYLCmQ/view" target="_blank" class="datasheet-btn">📄 Ver Data Sheet</a>
+                </div>
+            </div>
+
+            <!-- 5. Dicolor UT Series Transparente -->
+            <div class="pantalla-card" data-ptype="transparente">
+                <img src="https://lh3.googleusercontent.com/d/1soc9MieJK7-VmpsF--3fWOarl8V-H3LP" alt="Pantalla LED Transparente Dicolor UT Series" class="pantalla-image">
+                <div class="pantalla-info">
+                    <span class="pantalla-badge transparente-badge">TRANSPARENTE — DICOLOR UT</span>
+                    <h3>Dicolor UT-390 — Rejilla Transparente</h3>
+                    <p>40% de transparencia para efectos escénicos únicos. Ideal para escenarios, escaparates y arquitectura. Indoor y outdoor. Solo 6,5 kg.</p>
+                    <ul class="pantalla-specs">
+                        <li><span class="spec-label">Pitch:</span> <span>3.91 mm</span></li>
+                        <li><span class="spec-label">Gabinete:</span> <span>1000×500 mm</span></li>
+                        <li><span class="spec-label">Brillo:</span> <span>2.500–3.000 nits</span></li>
+                        <li><span class="spec-label">Transparencia:</span> <span>40%</span></li>
+                        <li><span class="spec-label">Peso:</span> <span>6,5 kg/gabinete</span></li>
+                        <li><span class="spec-label">IP:</span> <span>IP65 / IP54</span></li>
+                    </ul>
+                    <a href="https://drive.google.com/file/d/1g_S5tdvGAP1x7D824OkcT-5caJ2ddmEo/view" target="_blank" class="datasheet-btn">📄 Ver Data Sheet</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -336,10 +450,10 @@
                 <h3>Teléfono</h3>
                 <p>618 831 500</p>
             </a>
-            <a href="mailto:tlo@tlovisual.com" class="contacto-method">
+            <a href="/cdn-cgi/l/email-protection#72061e1d32061e1d041b0107131e5c111d1f" class="contacto-method">
                 <div class="contacto-method-icon">✉️</div>
                 <h3>Email</h3>
-                <p>tlo@tlovisual.com</p>
+                <p><span class="__cf_email__" data-cfemail="2450484b6450484b524d575145480a474b49">[email&#160;protected]</span></p>
             </a>
         </div>
     </section>
@@ -372,7 +486,7 @@
             <div class="footer-section">
                 <h3>Contacto</h3>
                 <ul>
-                    <li>📧 tlo@tlovisual.com</li>
+                    <li>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2a5e46456a5e46455c43595f4b4604494547">[email&#160;protected]</a></li>
                     <li>📞 686 514 064</li>
                     <li>📱 618 831 500</li>
                     <li>📍 España</li>
@@ -387,12 +501,28 @@
     <!-- WHATSAPP FLOATING BUTTON -->
     <a href="https://wa.me/34686514064" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-    </a>
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+</a>
 
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
+<script src="js/main.js"></script>
+<script>
+    // Filtros de pantallas LED
+    document.querySelectorAll('.pantalla-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.pantalla-filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.getAttribute('data-pfilter');
+            document.querySelectorAll('.pantalla-card').forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-ptype') === filter) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
