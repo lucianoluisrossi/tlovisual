@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora LED - TLO Visual</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/calculator.css">
+</head>
+<body>
+
+    <!-- BACK TO HOME -->
+    <div class="back-nav">
+        <a href="index.html" class="back-btn">← Volver al inicio</a>
+    </div>
+
+    <div class="calculator-container">
+        <!-- HEADER -->
+        <div class="calculator-header">
+            <h1>🧮 Calculadora de Pantallas LED</h1>
+            <p>Calculá la configuración ideal para tu evento en segundos</p>
+        </div>
+
+        <!-- BODY -->
+        <div class="calculator-body">
+            <!-- INPUTS SECTION -->
+            <div class="inputs-section">
+                <h2 class="section-title">Datos de tu Proyecto</h2>
+
+                <div class="input-group">
+                    <label>
+                        Ancho deseado de la pantalla
+                        <span class="info-tooltip" title="Ancho aproximado que necesitas">?</span>
+                    </label>
+                    <div class="input-with-unit">
+                        <input type="number" id="width" placeholder="Ej: 10" step="0.5" min="1" value="10">
+                        <span class="unit">metros</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>
+                        Alto deseado de la pantalla
+                        <span class="info-tooltip" title="Alto aproximado que necesitas">?</span>
+                    </label>
+                    <div class="input-with-unit">
+                        <input type="number" id="height" placeholder="Ej: 6" step="0.5" min="1" value="6">
+                        <span class="unit">metros</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>
+                        Distancia mínima de visualización
+                        <span class="info-tooltip" title="¿A qué distancia estará el público más cercano?">?</span>
+                    </label>
+                    <div class="input-with-unit">
+                        <input type="number" id="distance" placeholder="Ej: 15" step="1" min="1" value="15">
+                        <span class="unit">metros</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Tipo de evento</label>
+                    <select id="eventType">
+                        <option value="indoor">Indoor (Interior)</option>
+                        <option value="outdoor">Outdoor (Exterior)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Uso</label>
+                    <select id="useType">
+                        <option value="rental">Alquiler / Evento temporal</option>
+                        <option value="fixed">Instalación fija</option>
+                    </select>
+                </div>
+
+                <button class="calculate-btn" onclick="calculate()">🧮 Calcular Configuración</button>
+            </div>
+
+            <!-- RESULTS SECTION -->
+            <div class="results-section">
+                <h2 class="section-title">Resultados</h2>
+
+                <div class="visual-preview" id="visualPreview">
+                    <div class="screen-visualization" id="screenViz" style="width: 200px; height: 120px;">
+                        10m × 6m
+                    </div>
+                    <span class="dimension-label dimension-width">10.00m</span>
+                    <span class="dimension-label dimension-height">6.00m</span>
+                </div>
+
+                <div class="result-card">
+                    <h3>💎 Pitch Recomendado</h3>
+                    <div class="result-value" id="pitchResult">P4.8</div>
+                    <div class="result-detail">Ideal para esta distancia de visualización</div>
+                </div>
+
+                <div class="result-card">
+                    <h3>📐 Resolución Final</h3>
+                    <div class="result-value" id="resolutionResult">2083 × 1250 px</div>
+                    <div class="result-detail">Pixeles horizontales × verticales</div>
+                </div>
+
+                <div class="result-card">
+                    <h3>🧩 Módulos Necesarios</h3>
+                    <div class="result-value" id="modulesResult">20 × 12 = 240</div>
+                    <div class="result-detail">Cantidad total de paneles (500×500mm)</div>
+                </div>
+
+                <div class="result-card">
+                    <h3>⚖️ Peso Aproximado</h3>
+                    <div class="result-value" id="weightResult">960 kg</div>
+                    <div class="result-detail">Peso total de la configuración</div>
+                </div>
+
+                <div class="result-card">
+                    <h3>⚡ Consumo Eléctrico</h3>
+                    <div class="result-value" id="powerResult">12 kW</div>
+                    <div class="result-detail">Consumo máximo estimado</div>
+                </div>
+
+                <div class="recommendation-box">
+                    <h3>✨ Recomendaciones</h3>
+                    <ul id="recommendations">
+                        <li><span class="check-icon">✓</span> Pantalla P4.8 Outdoor es ideal para esta distancia</li>
+                        <li><span class="check-icon">✓</span> Excelente para conciertos y eventos grandes</li>
+                        <li><span class="check-icon">✓</span> Requiere estructura de soporte tipo truss</li>
+                        <li><span class="check-icon">✓</span> Se puede montar en 4-6 horas con equipo técnico</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <p>¿Te interesa esta configuración? Consultanos para recibir un presupuesto personalizado</p>
+            <a href="https://wa.me/34686514064" class="contact-btn" target="_blank">📱 Consultar por WhatsApp</a>
+            <a href="mailto:tlo@tlovisual.com" class="contact-btn" style="margin-left: 1rem;">📧 Enviar Email</a>
+        </div>
+    </div>
+
+    <script src="js/calculator.js"></script>
+
+</body>
+</html>
