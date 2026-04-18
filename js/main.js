@@ -16,12 +16,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // NAVBAR BACKGROUND ON SCROLL
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
+    const styles = getComputedStyle(document.documentElement);
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+        navbar.style.background = styles.getPropertyValue('--navbar-bg-scroll').trim();
     } else {
-        navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+        navbar.style.background = styles.getPropertyValue('--navbar-bg-idle').trim();
     }
 });
+
+// THEME TOGGLE
+(function() {
+    const btn = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('tlo-theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+
+    btn.addEventListener('click', function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'glass' ? '' : 'glass';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('tlo-theme', next);
+        // Reset navbar inline style so CSS vars take effect
+        document.querySelector('.navbar').style.background = '';
+    });
+})();
 
 // MOBILE MENU TOGGLE
 const menuToggle = document.getElementById('menuToggle');
