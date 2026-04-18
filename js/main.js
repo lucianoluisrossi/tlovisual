@@ -24,18 +24,23 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// THEME TOGGLE
+// THEME TOGGLE — cycles: default → glass → gold → default
 (function() {
     const btn = document.getElementById('theme-toggle');
-    const saved = localStorage.getItem('tlo-theme');
+    const themes = ['', 'glass', 'gold'];
+    const icons  = ['◐', '◑', '●'];
+
+    const saved = localStorage.getItem('tlo-theme') || '';
     if (saved) document.documentElement.setAttribute('data-theme', saved);
+    btn.textContent = icons[themes.indexOf(saved)] || '◐';
 
     btn.addEventListener('click', function() {
-        const current = document.documentElement.getAttribute('data-theme');
-        const next = current === 'glass' ? '' : 'glass';
+        const current = document.documentElement.getAttribute('data-theme') || '';
+        const idx  = themes.indexOf(current);
+        const next = themes[(idx + 1) % themes.length];
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('tlo-theme', next);
-        // Reset navbar inline style so CSS vars take effect
+        btn.textContent = icons[(idx + 1) % themes.length];
         document.querySelector('.navbar').style.background = '';
     });
 })();

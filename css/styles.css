@@ -810,6 +810,72 @@ footer {
     border-color: var(--primary-orange);
 }
 
+/* ===================================
+   TEMA C — CINEMATIC GOLD
+   Activo con data-theme="gold" en <html>
+   ================================ */
+
+[data-theme="gold"] {
+    --primary-orange: #CA8A04;
+    --primary-black: #0F0F23;
+    --dark-gray: #1B1B30;
+    --medium-gray: #2E2E4A;
+    --accent-secondary: #D97706;
+    --accent-glow: rgba(202, 138, 4, 0.3);
+    --accent-glow-strong: rgba(202, 138, 4, 0.5);
+    --accent-bg: rgba(202, 138, 4, 0.08);
+    --navbar-bg-idle: rgba(15, 15, 35, 0.92);
+    --navbar-bg-scroll: rgba(15, 15, 35, 0.98);
+    --overlay-bg: rgba(8, 8, 22, 0.95);
+    --card-backdrop: none;
+    --card-border: rgba(202, 138, 4, 0.15);
+}
+
+[data-theme="gold"] body {
+    background: linear-gradient(180deg, #0F0F23 0%, #080816 100%);
+    background-attachment: fixed;
+}
+
+[data-theme="gold"] h1,
+[data-theme="gold"] h2,
+[data-theme="gold"] h3,
+[data-theme="gold"] h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+}
+
+[data-theme="gold"] .section-header h2 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1;
+}
+
+[data-theme="gold"] .slide-info h2 {
+    font-size: clamp(3.5rem, 8vw, 8rem);
+    line-height: 0.95;
+}
+
+[data-theme="gold"] .pantalla-info h3 {
+    font-size: 1.8rem;
+}
+
+[data-theme="gold"] .intro {
+    background: #131328;
+}
+
+[data-theme="gold"] .pantalla-card {
+    background: #1B1B30;
+    border: 1px solid rgba(202, 138, 4, 0.12);
+}
+
+[data-theme="gold"] .equipo-card {
+    background: #1B1B30;
+}
+
+[data-theme="gold"] .proyecto-overlay {
+    background: linear-gradient(to top, var(--overlay-bg) 0%, rgba(15, 15, 35, 0.3) 50%, transparent 100%);
+}
+
 /* THEME TOGGLE BUTTON */
 #theme-toggle {
     background: none;
