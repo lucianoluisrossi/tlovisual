@@ -198,6 +198,7 @@ document.querySelectorAll('.pantalla-card, .proyecto-item, .equipo-card').forEac
 // MODAL DETALLE PANTALLA
 (function() {
     const modal   = document.getElementById('pantalla-modal');
+    if (!modal) return;
     const closeBtn = document.getElementById('modal-close');
 
     // Inject "Ver detalle" button into every pantalla-card
@@ -228,6 +229,14 @@ document.querySelectorAll('.pantalla-card, .proyecto-item, .equipo-card').forEac
 
             const msg = encodeURIComponent('Hola TLO Visual, me interesa la ' + title.textContent + '. ¿Podéis enviarme información y disponibilidad?');
             document.getElementById('modal-whatsapp').href = 'https://wa.me/34686514064?text=' + msg;
+
+            const pageLink = document.getElementById('modal-page-link');
+            if (card.dataset.href) {
+                pageLink.href = card.dataset.href;
+                pageLink.style.display = '';
+            } else {
+                pageLink.style.display = 'none';
+            }
 
             modal.classList.add('open');
             document.body.style.overflow = 'hidden';
