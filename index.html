@@ -506,6 +506,28 @@
     </svg>
 </a>
 
+<!-- MODAL DETALLE PANTALLA -->
+<div id="pantalla-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+        <button class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
+        <div class="modal-body">
+            <div class="modal-image-col">
+                <img id="modal-img" src="" alt="" class="modal-img">
+            </div>
+            <div class="modal-info-col">
+                <span id="modal-badge" class="pantalla-badge"></span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-desc"></p>
+                <ul id="modal-specs" class="pantalla-specs modal-specs"></ul>
+                <div class="modal-actions">
+                    <a id="modal-datasheet" href="#" target="_blank" class="datasheet-btn">📄 Ver Data Sheet</a>
+                    <a id="modal-whatsapp" href="#" target="_blank" class="btn-primary modal-wa-btn">Consultar disponibilidad</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="js/main.js"></script>
 <script>
     // Filtros de pantallas LED

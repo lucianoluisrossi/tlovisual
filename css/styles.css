@@ -761,6 +761,149 @@ footer {
 }
 
 /* ===================================
+   MODAL DETALLE PANTALLA
+   ================================ */
+
+.ver-detalle-btn {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    background: transparent;
+    border: 1px solid var(--primary-orange);
+    color: var(--primary-orange);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ver-detalle-btn:hover {
+    background: var(--primary-orange);
+    color: var(--white);
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.modal-overlay.open {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--dark-gray);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: scale(0.95) translateY(20px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--white);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s ease;
+}
+
+.modal-close:hover {
+    background: var(--primary-orange);
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+.modal-image-col {
+    border-radius: 16px 0 0 16px;
+    overflow: hidden;
+}
+
+.modal-img {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.modal-info-col {
+    padding: 2.5rem;
+}
+
+.modal-info-col h2 {
+    font-size: 1.8rem;
+    margin: 0.8rem 0;
+    line-height: 1.2;
+}
+
+.modal-info-col p {
+    color: var(--light-gray);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.modal-specs {
+    margin-bottom: 1.5rem !important;
+}
+
+.modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.modal-wa-btn {
+    text-align: center;
+    padding: 0.8rem 1.5rem;
+}
+
+@media (max-width: 650px) {
+    .modal-body {
+        grid-template-columns: 1fr;
+    }
+    .modal-image-col {
+        border-radius: 16px 16px 0 0;
+    }
+    .modal-img {
+        min-height: 220px;
+    }
+    .modal-info-col {
+        padding: 1.5rem;
+    }
+}
+
+/* ===================================
    TEMA B — GLASSMORPHISM CINEMATIC
    Activo con data-theme="glass" en <html>
    ================================ */

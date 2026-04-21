@@ -195,6 +195,56 @@ document.querySelectorAll('.pantalla-card, .proyecto-item, .equipo-card').forEac
     observer.observe(el);
 });
 
+// MODAL DETALLE PANTALLA
+(function() {
+    const modal   = document.getElementById('pantalla-modal');
+    const closeBtn = document.getElementById('modal-close');
+
+    // Inject "Ver detalle" button into every pantalla-card
+    document.querySelectorAll('.pantalla-card').forEach(card => {
+        const btn = document.createElement('button');
+        btn.className = 'ver-detalle-btn';
+        btn.textContent = 'Ver detalle';
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const img      = card.querySelector('.pantalla-image');
+            const badge    = card.querySelector('.pantalla-badge');
+            const title    = card.querySelector('h3');
+            const desc     = card.querySelector('p');
+            const specs    = card.querySelector('.pantalla-specs');
+            const datasheet = card.querySelector('.datasheet-btn');
+
+            document.getElementById('modal-img').src = img.src;
+            document.getElementById('modal-img').alt = img.alt;
+            document.getElementById('modal-badge').textContent  = badge.textContent;
+            document.getElementById('modal-badge').className    = 'pantalla-badge ' + [...badge.classList].filter(c => c !== 'pantalla-badge').join(' ');
+            document.getElementById('modal-title').textContent  = title.textContent;
+            document.getElementById('modal-desc').textContent   = desc.textContent;
+            document.getElementById('modal-specs').innerHTML    = specs.innerHTML;
+
+            const ds = document.getElementById('modal-datasheet');
+            if (datasheet) { ds.href = datasheet.href; ds.style.display = ''; }
+            else { ds.style.display = 'none'; }
+
+            const msg = encodeURIComponent('Hola TLO Visual, me interesa la ' + title.textContent + '. ¿Podéis enviarme información y disponibilidad?');
+            document.getElementById('modal-whatsapp').href = 'https://wa.me/34686514064?text=' + msg;
+
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+        card.querySelector('.pantalla-info').appendChild(btn);
+    });
+
+    function closeModal() {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+})();
+
 // FORM VALIDATION (if forms are added later)
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
