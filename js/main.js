@@ -82,10 +82,11 @@ function prevSlide() {
 }
 
 // Auto-advance slides every 5 seconds
-let slideInterval = setInterval(nextSlide, 5000);
+let slideInterval = totalSlides > 0 ? setInterval(nextSlide, 5000) : null;
 
 // Reset interval on manual navigation
 function resetSlideInterval() {
+    if (!totalSlides) return;
     clearInterval(slideInterval);
     slideInterval = setInterval(nextSlide, 5000);
 }

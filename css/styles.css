@@ -111,7 +111,33 @@ img {
     transition: all 0.3s ease;
 }
 
-/* HERO GALLERY */
+/* HERO VIDEO */
+.video-hero {
+    margin-top: 80px;
+    height: 85vh;
+    position: relative;
+    overflow: hidden;
+    background: var(--primary-black);
+}
+
+.video-hero-wrapper {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.video-hero-wrapper iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Vertical (9:16) Short scaled to cover landscape hero */
+    width: 100vw;
+    height: calc(100vw * 16 / 9);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* HERO GALLERY (kept for legacy JS references) */
 .hero-gallery {
     margin-top: 80px;
     height: 85vh;
